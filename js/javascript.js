@@ -32,6 +32,7 @@ squares.forEach((square, index, array) => {
 const container = document.querySelector('.outter-wrapper');
 const innerContainer = container.querySelector(".inner-wrapper");
 const titles = document.querySelectorAll(".work-together .left-side h3");
+const photos = document.querySelectorAll(".about-us2 .rightside .photo")
 
 container.onscroll = () => {
     const sectionX = innerContainer.getBoundingClientRect().left;
@@ -43,5 +44,10 @@ container.onscroll = () => {
     } else {
         titles.forEach(title => title.classList.remove("appear"));
         squares.forEach(square => square.classList.remove("fall"));
+    };
+    if (sectionX < screenWidth * -1.5 && sectionX > screenWidth * -2.5) {
+        photos.forEach(photo => photo.classList.add("shake"));
+    } else {
+        photos.forEach(photo => photo.classList.remove("shake"));
     };
 };

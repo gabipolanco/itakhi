@@ -1,3 +1,33 @@
+@keyframes ballColor {
+    from {
+        background-color: lighten($purple, 20%);
+    } to {
+        background-color: $purple;
+    }
+}
+
+@keyframes textAppear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+@keyframes shakePhoto {
+    0% {
+        transform: rotate(0);
+    } 25% {
+        transform: rotate(-5deg);
+    } 50% {
+        transform: rotate(0);        
+    } 75% {
+        transform: rotate(5deg);
+    } 100% {
+        transform: rotate(0);
+    }
+}
+
 @keyframes appear {
     from {
         transform: translateY(7rem);
@@ -31,12 +61,12 @@
 @keyframes circle-animation {
     0% {
         transform: scale(1);
-        opacity: .3;
+        opacity: .8;
     } 50% {
         transform: scale(.8);
-        opacity: .15;
+        opacity: .3;
     } 100% {
         transform: scale(1);
-        opacity: .3;
+        opacity: .8;
     }
 }

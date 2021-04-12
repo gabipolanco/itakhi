@@ -12,6 +12,7 @@
         left: 30px;
         display: flex;
         flex-direction: column;
+        animation: textAppear 2s linear;
         i {
             font-size: 2rem;
             margin-top: 2vh;
@@ -23,6 +24,7 @@
         right: 7vw;
         text-align: right;
         z-index: 3;
+        animation: textAppear 1.5s linear;
         .title {
             line-height: .8;
         }
@@ -41,26 +43,28 @@
         &:before {
             content: '';
             position: absolute;
-            top: 5vh;
-            left: -45vh;
+            transform-origin: center center;
+            transform: translate(-22vw, 5vh);
             z-index: 2;
             background-color: $purple;
-            height: 90vh;
-            width: 90vh;
+            height: 44vw;
+            width: 44vw;
             border-radius: 50%;
+            animation: ballColor 3s linear;
         }
     }
     @media (max-width: 600px) {
         .welcome {
-            .itakhi, .digital, .taller {
-                font-size: 48px;
+            bottom: 20vh;
+            .title {
+                font-size: 4rem;
             }
-            .taller {
-                margin-left: 45px;
+            h2 {
+                font-size: 2.4rem;
             }
-            .itakhi {
-                margin: 15vh 0;
-            }
+        }
+        .bg-right-side:before {
+            transform: translate(-22vw, 25vh);
         }
     }
 }

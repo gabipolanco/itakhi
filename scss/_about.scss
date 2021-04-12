@@ -65,6 +65,9 @@
                 height: 45vh;
                 position: absolute;
                 overflow: hidden;
+                &.shake {
+                    animation: shakePhoto 1s ease;
+                }
                 img {
                     max-width: 100%;
                     object-fit: cover;
@@ -111,6 +114,8 @@
                     bottom: -5vh;
                     right: 30vw;
                     z-index: 11;
+                    animation-delay: .3s;
+                    animation-duration: .5s;
                     img {
                         transform: translateY(-50px);
                     }
@@ -155,6 +160,13 @@
             }
         }
     }
+    @media (max-width: 1100px) {
+        .leftside {
+            h3 {
+                font-size: 6rem;
+            }
+        }
+    }
     @media (max-width: 820px) {
         flex-direction: column;
         justify-content: center;
@@ -165,8 +177,8 @@
         .leftside {
             height: 30vw;
             h3 {
-                transform: rotate(0);
-                font-size: 32px;
+                transform: rotate(0) translateY(15vh);
+                font-size: 3rem;
                 margin: 10vw;
                 width: 100%;
                 &:after {
@@ -176,6 +188,7 @@
         }
         .rightside {
             padding: 0 5vw;
+            border: none;
             .text {
                 font-size: 2rem;
                 margin: 8vh 0;
@@ -184,6 +197,10 @@
         &.about-us2 {
             .leftside {
                 width: 100vw;
+                .text {
+                    font-size: 2rem;
+                    transform: translateY(5vh);
+                }
             }
             .rightside {
                 width: 100vw;
